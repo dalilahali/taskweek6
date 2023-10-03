@@ -3,6 +3,7 @@
 import { Input, Button } from "@nextui-org/react";
 import { useState } from "react";
 import toast from "react-hot-toast";
+import Link from "next/link";
 
 export const AuthLogin = () => {
     const [loginData, setLoginData] = useState ({
@@ -42,7 +43,18 @@ export const AuthLogin = () => {
                     <Input name="email" placeholder="email" onChange={handleChange}/>
                     <Input name="password" placeholder="password" type="password" onChange={handleChange}/>
                     <Button onClick={handleSubmitLogin}>Login</Button>
+
+                    <div className="flex gap-2 py-5">
+                        <div className="text-sm"> Don't have an Account? </div>
+                        <Link className= "text-sm font-bold hover:text-blue-600" href="/register" color>
+                         Register
+                        </Link>
+                    
+                    </div>
                 </div>
+                
+                
+                
             </div>
         </main>
     );
